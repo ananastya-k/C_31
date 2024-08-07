@@ -11,6 +11,10 @@ public class Lesson2 {
         int threeDigitNum = 159;
         System.out.printf("\nTask 3:\nInput data: %d\nOutput data: %d\n",threeDigitNum, executeTask2Or3(threeDigitNum));
 
+
+        System.out.println("\nTask 5:");
+        executeTask5(b, c);
+
     }
 
     // Calculate the result of the formula: a = 4 * (b + c - 1) / 2
@@ -25,6 +29,11 @@ public class Lesson2 {
             sum += n % 10;
         }
         return sum;
+    }
+
+    // Print division result and remainder of q divided by w
+    public static void executeTask5(int q, int w) {
+        System.out.printf("%d / %d = %d и %d в остатке\n", q, w,q/w, q% w);
     }
 
 }
