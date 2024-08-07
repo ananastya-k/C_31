@@ -11,6 +11,8 @@ public class Lesson2 {
         int threeDigitNum = 159;
         System.out.printf("\nTask 3:\nInput data: %d\nOutput data: %d\n",threeDigitNum, executeTask2Or3(threeDigitNum));
 
+        double n = -5.97;
+        System.out.printf("\nTask 4:\nInput data: %f\nOutput data: %d\n", n, executeTask4(n));
 
         System.out.println("\nTask 5:");
         executeTask5(b, c);
@@ -36,6 +38,26 @@ public class Lesson2 {
         }
         return sum;
     }
+
+
+    //Round number
+    //  return (n * 10) % 10 >= 5 ? (long)++n : (long)n;
+    public static long executeTask4(double n) {
+
+        long bits = Double.doubleToLongBits(n);
+        long e = ((bits << 1) >>> 53) - 1023;
+        long m =  ((bits << 12) >>>12) | (1L << 52);
+
+        m += (1L << (52 - e - 1));
+
+        long integer = (e >= 0 && e < 52)
+                ? (m) >> (52-e)
+                : (long) n;
+
+        return bits > 0 ? integer : -integer;
+
+    }
+
 
     // Print division result and remainder of q divided by w
     public static void executeTask5(int q, int w) {
