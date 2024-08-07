@@ -15,6 +15,12 @@ public class Lesson2 {
         System.out.println("\nTask 5:");
         executeTask5(b, c);
 
+        System.out.println("\nTask 6.v.1.0:");
+        executeTask6(b, c);
+
+        System.out.println("\nTask 6.v.1.1:");
+        executeUpgradeTask6(b, c);
+
     }
 
     // Calculate the result of the formula: a = 4 * (b + c - 1) / 2
@@ -34,6 +40,25 @@ public class Lesson2 {
     // Print division result and remainder of q divided by w
     public static void executeTask5(int q, int w) {
         System.out.printf("%d / %d = %d и %d в остатке\n", q, w,q/w, q% w);
+    }
+
+    // Swap values of a and b using a temporary variable
+    public static void executeTask6(int a, int b) {
+        System.out.printf("Input data: a = %d; b = %d\n", a, b);
+        int temp = a;
+        a = b;
+        b = temp;
+        System.out.printf("Output data: a = %d; b = %d\n", a, b);
+    }
+
+    // Swap values of a and b without using a temporary variable
+    public static void executeUpgradeTask6(int a, int b) {
+
+        System.out.printf("Input data: a = %d; b = %d\n", a, b);
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        System.out.printf("Output data: a = %d; b = %d\n", a, b);
     }
 
 }
