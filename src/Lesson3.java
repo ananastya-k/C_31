@@ -12,8 +12,11 @@ public class Lesson3 {
         System.out.print("\nTask 2.\nInput temperature: ");
         System.out.println(executeTask2(sc.nextInt()));
 
-        System.out.println("\nTask 3:\n");
+        System.out.println("\nTask 3:");
         executeTask3();
+
+        System.out.println("\nTask 4:");
+        executeTask4();
 
     }
 
@@ -35,5 +38,14 @@ public class Lesson3 {
         for (int i = 10; i <= 20; i++){
             System.out.print(i * i + " ");
         }
+        System.out.println();
+    }
+
+    // Prints multiples of 7 from 7 to 98.
+    public static void executeTask4() {
+        for (int i = 7; i < 100; i+=7){
+            System.out.print(i + " ");
+        }
+        System.out.println();
     }
 }
