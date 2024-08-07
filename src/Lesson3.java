@@ -51,8 +51,10 @@ public class Lesson3 {
 
     // Prints multiples of 7 from 7 to 98
     public static void executeTask4() {
-        for (int i = 7; i < 100; i += 7){
-            System.out.print(i + " ");
+        int i = 7;
+        while (i < 100){
+            System.out.print( i + " ");
+            i += 7;
         }
         System.out.println();
     }
