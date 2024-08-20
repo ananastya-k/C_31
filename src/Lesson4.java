@@ -31,8 +31,7 @@ public class Lesson4 {
 
         System.out.println("Task 7: ");
         printArray(array);
-        incrementArray(array);
-        printArray(array);
+        printArray(incrementArray(array));
     }
 
     public static int promptArrayLength() {
@@ -89,7 +88,7 @@ public class Lesson4 {
     public static void randomArrayFill(int[] array) {
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt();
+            array[i] = random.nextInt(0,10);
         }
     }
 
@@ -124,13 +123,11 @@ public class Lesson4 {
             return array;
         }
 
-        int num = 0;
-        int placeValue = (int) Math.pow(10, array.length - 1);
-
-        for (int i = 0; i < array.length; i++, placeValue /= 10) {
-            num += placeValue * array[i];
+        StringBuilder number = new StringBuilder();
+        for(int i : array){
+            number.append(i);
         }
-
+        int num = Integer.parseInt(String.valueOf(number));
         num++;
         String temp = Integer.toString(num);
         int[] newArray = new int[temp.length()];
@@ -143,11 +140,11 @@ public class Lesson4 {
     }
 
     public static void reversePrintArray(int [] array) {
-        System.out.print("[ ");
-        for(int i = array.length - 1; i >= 0; i--) {
-            System.out.print(array[i] + " ");
+        System.out.print("[");
+        for(int i = array.length - 1; i > 0; i--) {
+            System.out.print(array[i] + ", ");
         }
-        System.out.println(" ]");
+        System.out.println(array[0] + "]");
     }
 
     public static int findMin(int [] array) {
